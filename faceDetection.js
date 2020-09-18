@@ -47,9 +47,8 @@ video.addEventListener("play", () => {
     // faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
     // var partialface = detections[0].alignedRect._score; 
     //console.log(detections[0].alignedRect._score);
-
+    checkUser = true;
     if (detections.length > 1) {
-      checkUser = true;
       status.innerHTML =
         "Annomaly 1 Detected " + detections.length + " user detected";
     }
