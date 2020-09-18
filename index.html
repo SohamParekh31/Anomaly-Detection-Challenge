@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <script src="face-api.min.js"></script>
+  <script defer src="faceDetection.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.1"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/p5.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.sound.js"
+    ></script>
+  </head>
+  <body>
+    <button id="start">Start Test</button>
+  
+    <video id="video" width="720" height="560" autoplay muted></video>
+    <canvas id="canvas" width="500" height="500" style="visibility: hidden;"></canvas>
+    <h4 id="status"></h4>
+    <h4 id="status1"></h4>
+    <h4 id="status2"></h4>
+    <h4 id="status3"></h4>
+    <h4 id="status4"></h4>
+    
+  
+  <script>
+    // var mic;
+
+    
+    // const video1 = document.getElementById("video");
+    // // const status = document.getElementById("status");
+
+    // const status3 = document.getElementById("status1");
+    // const status4 = document.getElementById("status2");
+    // const canvas = document.querySelector("#canvas");
+    // const context = canvas.getContext("2d");
+    // // navigator.getUserMedia(
+    // //   { video: {} },
+    // //   (stream) => (video.srcObject = stream),
+    // //   (err) => console.error(err)
+    // // );
+
+    // predict();
+
+    // async function predict() {
+    //   const model = await mobilenet.load();
+    //   context.drawImage(video1, 0, 0, 500, 500);
+    //   const predictions = await model.classify(canvas);
+    //   console.log(predictions[0].className);
+    //   requestAnimationFrame(predict);
+    //   if (
+    //     predictions[0].className ==
+    //       "cellular telephone, cellular phone, cellphone, cell, mobile phone" ||
+    //     predictions[0].className == "dial telephone, dial phone" ||
+    //     predictions[0].className == "microphone, mike" ||
+    //     predictions[0].className == "laptop, laptop computer") {
+    //     status3.innerHTML = "Annomaly 6 Detected Mobile Phone detected";
+    //   }
+    // }
+    // function setup() {
+    //   mic = new p5.AudioIn();
+    //   mic.start();
+    // }
+
+    // function draw() {
+    //   var vol = mic.getLevel();
+    //   if(vol > 0.3)
+    //       status4.innerHTML = "Annomaly 7 Detected user sound detected"
+      
+    // }
+  </script>
+  </body>
+</html>
