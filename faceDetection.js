@@ -3,6 +3,7 @@ const status = document.getElementById("status");
 const status1 = document.getElementById("status1");
 const status2 = document.getElementById("status2");
 const start = document.getElementById("start");
+var checkUser = false;
 var mic;
 
 const status3 = document.getElementById("status3");
@@ -48,13 +49,14 @@ video.addEventListener("play", () => {
     //console.log(detections.length);
 
     if (detections.length > 1) {
+      checkUser = true;
       status.innerHTML =
         "Annomaly 1 Detected " + detections.length + " user detected";
     }
     if (detections.length == 0) {
       status1.innerHTML = "Annomaly 2 Detected no user detected";
     }
-    if (detections.length == 0) {
+    if (detections.length == 0 && checkUser == true) {
       status2.innerHTML = "Annomaly 3 Detected User has coverd his face";
     }
   }, 100);
