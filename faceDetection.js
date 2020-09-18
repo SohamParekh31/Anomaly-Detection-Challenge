@@ -42,11 +42,11 @@ video.addEventListener("play", () => {
       .withFaceExpressions();
     const resizedDetections = faceapi.resizeResults(detections, displaySize);
     canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
-    // faceapi.draw.drawDetections(canvas, resizedDetections)
-    // faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
-    // faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
-
-    //console.log(detections.length);
+    faceapi.draw.drawDetections(canvas, resizedDetections)
+    faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
+    faceapi.draw.drawFaceExpressions(canvas, resizedDetections)
+    var partialface = detections[0].alignedRect._score; 
+    //console.log(detections[0].alignedRect._score);
 
     if (detections.length > 1) {
       checkUser = true;
@@ -58,6 +58,9 @@ video.addEventListener("play", () => {
     }
     if (detections.length == 0 && checkUser == true) {
       status2.innerHTML = "Annomaly 3 Detected User has coverd his face";
+    }
+    if(partialface > 0.7){
+      console.log("Annomaly 4 Detected Partial face detected");
     }
   }, 100);
 });
